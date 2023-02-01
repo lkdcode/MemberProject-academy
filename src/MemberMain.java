@@ -1,5 +1,3 @@
-package com.edu.view;
-
 import com.edu.controller.MemberController;
 import com.edu.entity.MemberEntity;
 
@@ -28,9 +26,9 @@ public class MemberMain {
                 case 1:
                     // 추가
 
-                    System.out.print("이름 : ");
+                    System.out.print("추가할 사람의 이름 : ");
                     name = scanner.next();
-                    System.out.print("전화 : ");
+                    System.out.print("추가할 사람의 전화 : ");
                     phone = scanner.next();
 
                     MemberEntity memberEntity = new MemberEntity();
@@ -42,14 +40,24 @@ public class MemberMain {
 
                 case 2:
                     // 삭제
+                    System.out.print("삭제할 사람 : ");
+                    name = scanner.next();
+
+                    memberController.deleteMember(name);
 
                     break;
                 case 3:
                     // 전체보기
 
+                    memberController.getMemberList();
+
                     break;
                 case 4:
                     // 찾기
+                    System.out.print("찾을 사람 : ");
+                    name = scanner.next();
+
+                    memberController.getMember(name);
 
                     break;
                 case 5:
